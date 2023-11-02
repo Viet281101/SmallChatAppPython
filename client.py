@@ -60,7 +60,6 @@ class Login(tk.Frame):
             bd = 0, bg = BG_COLOR,
             highlightthickness = 0)
 		self.canvas.pack(side=TOP,padx=0,pady=0)
-		self.canvas.focus_set()
 
 		self.pls = Label(self.canvas, text="Please login to continue",
 			justify=CENTER, font=HELV_14_B, bg=BG_COLOR, fg=TXT_COLOR)
