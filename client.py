@@ -1,6 +1,6 @@
 
 
-import sys
+import sys, atexit
 import socket, threading
 from tkinter import *
 import tkinter as tk
@@ -101,8 +101,8 @@ class ChatBox(tk.Frame):
 		tk.Frame.__init__(self, master)
 		self.tkraise()
 		self.master.title("CHATBOX")
-		self.name : str = str(master._frame.entryName.get())
-		self.goAhead(self.name)
+		self.usrname : str = str(master._frame.entryName.get())
+		self.goAhead(self.usrname)
 
 	def goAhead(self, name:str) -> None:
 		self.layout(name)
@@ -303,5 +303,6 @@ def main(args) -> None:
 
 if __name__ == "__main__":
 	main(sys.argv)
+	atexit.register(ChatBox.closeServer)
 
 
